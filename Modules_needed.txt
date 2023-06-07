@@ -1,0 +1,8 @@
+----------------------------
+encryptedPassword_1.0.py:
+cryptography
+base64
+sqlite3
+pwinput
+----------------------------
+
