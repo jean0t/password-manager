@@ -94,6 +94,7 @@ def adding_passwd(key: bytes, app: str, passwd: str, username= " "): # adding ne
     database.commit()
     cursor.close()
     database.close()
+    system("clear")
 
 def verifying_password(key):
     database = sql.connect("passwords.db")
@@ -157,8 +158,11 @@ def show_passwd(key:bytes): # showing all the passwords stored in the database
         print("Password: ", decrypt(key= key, message= item[1]))
         print("=" * 30)
 
+    input("Press enter to Exit")
+    system("clear")
     cursor.close()
     database.close()
+    
 
 
 # main function with the organized code
@@ -203,7 +207,6 @@ def main():
                     passwrd = ask_password()
                     username = input("Username (if not, just let blank): ")
                     adding_passwd(key= key,app= application, passwd= passwrd, username= username)
-                    system("clear")
                 case 3:
                     show_passwd(key= key)
                     id = input("Id of the item you want to delete: ").strip()
